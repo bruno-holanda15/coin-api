@@ -15,7 +15,9 @@ return new class extends Migration
     {
         Schema::create('coins', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('coin');
+            $table->integer('value');
+            $table->date('date_searched')->unique();
         });
     }
 
