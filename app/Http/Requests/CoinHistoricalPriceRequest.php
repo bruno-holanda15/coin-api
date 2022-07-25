@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Carbon;
 
 class CoinHistoricalPriceRequest extends FormRequest
 {
@@ -21,6 +22,7 @@ class CoinHistoricalPriceRequest extends FormRequest
         $this->merge([
             'coin' => $this->query('coin') ?? 'bitcoin',
             'date' => $this->query('date'),
+            'limit_date' => Carbon::now()->format('d-m-Y')
         ]);
     }
     /**
@@ -37,7 +39,8 @@ class CoinHistoricalPriceRequest extends FormRequest
             ],
             'date' => [
                 'required',
-                'date'
+                'date',
+                "before:limit_date"
             ]
         ];
     }

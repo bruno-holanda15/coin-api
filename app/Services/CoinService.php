@@ -17,6 +17,9 @@ class CoinService
             'vs_currencies' => self::vs_currencie
         ]);
 
+        if ($response->failed() || empty($response->json()))
+            return ['coin' => 'Coin not found'];
+
         return [
             'coin' => $data['coin'],
             'value' => $response[$data['coin']][self::vs_currencie],
@@ -31,6 +34,9 @@ class CoinService
             'date' => $data['date'],
             'localization' => 'false'
         ]);
+
+        if ($response->failed())
+            return ['coin' => 'Coin not found'];
 
         return [
             'coin' => $data['coin'],
