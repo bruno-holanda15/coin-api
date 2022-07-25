@@ -39,7 +39,7 @@ class CoinHistoricalPriceRequest extends FormRequest
             ],
             'date' => [
                 'required',
-                'date',
+                'date_format:d-m-Y H:i:s',
                 "before:limit_date"
             ]
         ];

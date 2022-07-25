@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('coins', function (Blueprint $table) {
             $table->id();
             $table->string('coin');
-            $table->integer('value');
-            $table->date('date_searched')->unique();
+            $table->decimal('value', 25, 10);
+            $table->dateTime('date_searched');
         });
     }
 
