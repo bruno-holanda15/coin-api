@@ -19,7 +19,7 @@ class CoinService
         ]);
 
         if ($response->failed() || empty($response->json()))
-            return ['coin' => 'Coin not found'];
+            return response()->json(['coin' => 'Coin not found'], 400);
 
         $coin = [
             'coin' => $data['coin'],
@@ -40,7 +40,7 @@ class CoinService
         ]);
 
         if ($response->failed() || empty($response->json()))
-            return ['coin' => 'Coin not found'];
+            return response()->json(['coin' => 'Coin not found'], 400);
 
         $coin = [
             'coin' => $data['coin'],
