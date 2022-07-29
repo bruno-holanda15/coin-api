@@ -13,7 +13,7 @@ test('can return bitcoin price', function () {
 });
 
 test('can return other coins', function () {
-    $coin = faker()->randomElement(['chainlink', 'dacxi', 'ethereum' ,'terra-luna', 'chiliz']);
+    $coin = faker()->randomElement(['chainlink', 'ethereum' ,'terra-luna', 'chiliz']);
     $response = $this->get('/api/coinPrice?coin=' . $coin)->assertStatus(200);
     $this->assertIsNumeric($response['value']);
 });
