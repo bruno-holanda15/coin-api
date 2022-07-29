@@ -43,3 +43,12 @@ Fortunately the application is working at link above.
 >[DACXI-TEST](https://dacxi-coin-api.herokuapp.com/request-docs)
 
 In this path `\request-docs` you can test the endpoints, thanks for library [rakutentech/laravel-request-docs](https://github.com/rakutentech/laravel-request-docs)
+
+# Test
+Create tests using Pest.
+
+To access the tests in the project you need to run some commands.
+
+> `sail artisan migrate --env=testing`
+
+> `sail test`
