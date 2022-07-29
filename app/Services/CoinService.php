@@ -28,7 +28,7 @@ class CoinService
         ];
         Coin::create($coin);
 
-        return $coin;
+        return response()->json(['data' => $coin], 200);
     }
 
     public function getHistoricalPrice(array $data)
@@ -49,6 +49,6 @@ class CoinService
         ];
         Coin::create($coin);
 
-        return $coin;
+        return response()->json(['data' => $coin], 200);
     }
 }
